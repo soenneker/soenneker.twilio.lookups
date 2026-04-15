@@ -22,7 +22,7 @@ public sealed class TwilioLookupsUtil: ITwilioLookupsUtil
         _twilioOpenApiClientUtil = twilioOpenApiClientUtil;
     }
 
-    public async ValueTask<Lookups_v1_phone_number?> GetPhoneNumber(string phoneNumber, string[]? types = null, string[]? addOns = null, string? countryCode = null,
+    public async ValueTask<LookupsV1PhoneNumber?> GetPhoneNumber(string phoneNumber, string[]? types = null, string[]? addOns = null, string? countryCode = null,
         string? addOnsData = null, CancellationToken cancellationToken = default)
     {
         if (phoneNumber.IsNullOrWhiteSpace())

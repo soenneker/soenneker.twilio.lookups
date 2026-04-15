@@ -12,6 +12,6 @@ public interface ITwilioLookupsUtil
     /// <summary>
     /// Fetches Twilio Lookup details for a phone number.
     /// </summary>
-    ValueTask<Lookups_v1_phone_number?> GetPhoneNumber(string phoneNumber, string[]? types = null, string[]? addOns = null, string? countryCode = null,
+    ValueTask<LookupsV1PhoneNumber?> GetPhoneNumber(string phoneNumber, string[]? types = null, string[]? addOns = null, string? countryCode = null,
         string? addOnsData = null, CancellationToken cancellationToken = default);
 }

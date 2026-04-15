@@ -28,7 +28,7 @@ public sealed class TwilioLookupsUtilTests : FixturedUnitTest
     [LocalFact]
     public async Task GetPhoneNumber_should_return_lookup_data()
     {
-        Lookups_v1_phone_number? result = await _util.GetPhoneNumber(_phoneNumber, addOns: [_nomoroboSpamScore], cancellationToken: CancellationToken);
+        var result = await _util.GetPhoneNumber(_phoneNumber, addOns: [_nomoroboSpamScore], cancellationToken: CancellationToken);
 
         Assert.NotNull(result);
         Assert.Equal(_phoneNumber, result!.PhoneNumber);
