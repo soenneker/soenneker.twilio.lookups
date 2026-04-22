@@ -1,31 +1,30 @@
 using Soenneker.Twilio.Lookups.Abstract;
-using Soenneker.Tests.FixturedUnit;
+using Soenneker.Tests.HostedUnit;
 using System.Threading.Tasks;
-using Soenneker.Facts.Local;
+using Soenneker.Tests.Attributes.Local;
 using Soenneker.Twilio.OpenApiClient.Models;
-using Xunit;
 
 namespace Soenneker.Twilio.Lookups.Tests;
 
-[Collection("Collection")]
-public sealed class TwilioLookupsUtilTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class TwilioLookupsUtilTests : HostedUnitTest
 {
     private const string _phoneNumber = "";
     private const string _nomoroboSpamScore = "";
 
     private readonly ITwilioLookupsUtil _util;
 
-    public TwilioLookupsUtilTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public TwilioLookupsUtilTests(Host host) : base(host)
     {
         _util = Resolve<ITwilioLookupsUtil>(true);
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
     }
 
-    [LocalFact]
+    [LocalOnly]
     public async Task GetPhoneNumber_should_return_lookup_data()
     {
         var result = await _util.GetPhoneNumber(_phoneNumber, addOns: [_nomoroboSpamScore], cancellationToken: CancellationToken);
