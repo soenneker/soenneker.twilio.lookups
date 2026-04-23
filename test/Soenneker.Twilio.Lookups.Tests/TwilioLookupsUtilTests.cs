@@ -3,6 +3,7 @@ using Soenneker.Tests.HostedUnit;
 using System.Threading.Tasks;
 using Soenneker.Tests.Attributes.Local;
 using Soenneker.Twilio.OpenApiClient.Models;
+using AwesomeAssertions;
 
 namespace Soenneker.Twilio.Lookups.Tests;
 
@@ -27,10 +28,10 @@ public sealed class TwilioLookupsUtilTests : HostedUnitTest
     [LocalOnly]
     public async Task GetPhoneNumber_should_return_lookup_data()
     {
-        var result = await _util.GetPhoneNumber(_phoneNumber, addOns: [_nomoroboSpamScore], cancellationToken: CancellationToken);
+        var result = await _util.GetPhoneNumber(_phoneNumber, addOns: [_nomoroboSpamScore], cancellationToken: System.Threading.CancellationToken.None);
 
         Assert.NotNull(result);
-        Assert.Equal(_phoneNumber, result!.PhoneNumber);
+        result!.PhoneNumber.Should().Be(_phoneNumber);
         Assert.NotNull(result.AddOns);
     }
 }
