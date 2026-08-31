@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Description> A utility library for Twilio lookup related operations</Description>
+        <Description>Retrieves Twilio Lookup v1 data for phone numbers</Description>
         <Version Condition="'$(BUILD_VERSION)' == ''">4.0.0</Version>
         <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
         <AssemblyName>Soenneker.Twilio.Lookups</AssemblyName>

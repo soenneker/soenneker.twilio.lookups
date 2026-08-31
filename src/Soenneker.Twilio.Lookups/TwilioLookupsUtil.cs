@@ -3,15 +3,13 @@ using Soenneker.Twilio.OpenApiClient.Models;
 using Soenneker.Twilio.OpenApiClientUtil.Abstract;
 using System;
 using System.Threading;
-using Soenneker.Extensions.String;
 using System.Threading.Tasks;
 using Soenneker.Extensions.Task;
 using Soenneker.Twilio.OpenApiClient;
 
 namespace Soenneker.Twilio.Lookups;
 
-/// <inheritdoc cref="ITwilioLookupsUtil"/>
-public sealed class TwilioLookupsUtil: ITwilioLookupsUtil
+public sealed class TwilioLookupsUtil : ITwilioLookupsUtil
 {
     private const string _lookupsBaseUrl = "https://lookups.twilio.com/v1/PhoneNumbers/";
 
@@ -25,9 +23,6 @@ public sealed class TwilioLookupsUtil: ITwilioLookupsUtil
     public async ValueTask<LookupsV1PhoneNumber?> GetPhoneNumber(string phoneNumber, string[]? types = null, string[]? addOns = null, string? countryCode = null,
         string? addOnsData = null, CancellationToken cancellationToken = default)
     {
-        if (phoneNumber.IsNullOrWhiteSpace())
-            throw new ArgumentException("Phone number cannot be null or whitespace.", nameof(phoneNumber));
-
         TwilioOpenApiClient client = await _twilioOpenApiClientUtil.Get(cancellationToken);
 
         var rawUrl = $"{_lookupsBaseUrl}{Uri.EscapeDataString(phoneNumber)}";

@@ -6,7 +6,7 @@ using Soenneker.Twilio.OpenApiClientUtil.Registrars;
 namespace Soenneker.Twilio.Lookups.Registrars;
 
 /// <summary>
-///  A utility library for Twilio lookup related operations
+/// Registers services that retrieve Twilio Lookup v1 phone-number data.
 /// </summary>
 public static class TwilioLookupsUtilRegistrar
 {
