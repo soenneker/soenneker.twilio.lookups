@@ -20,8 +20,8 @@ Add the Twilio credentials used by the underlying OpenAPI client:
 ```json
 {
   "Twilio": {
-    "AccountSid": "AC...",
-    "AuthToken": "..."
+    "ApiKey": "SK...",
+    "ApiSecret": "..."
   }
 }
 ```
