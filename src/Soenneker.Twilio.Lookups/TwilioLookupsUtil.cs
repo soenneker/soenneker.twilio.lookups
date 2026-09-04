@@ -9,6 +9,7 @@ using Soenneker.Twilio.OpenApiClient;
 
 namespace Soenneker.Twilio.Lookups;
 
+/// <inheritdoc cref="ITwilioLookupsUtil" />
 public sealed class TwilioLookupsUtil : ITwilioLookupsUtil
 {
     private const string _lookupsBaseUrl = "https://lookups.twilio.com/v1/PhoneNumbers/";
