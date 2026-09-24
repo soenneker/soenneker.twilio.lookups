@@ -26,4 +26,7 @@
     <ItemGroup>
         <ProjectReference Include="..\..\src\Soenneker.Twilio.Lookups\Soenneker.Twilio.Lookups.csproj" />
     </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="AwesomeAssertions" Version="9.6.0" />
+    </ItemGroup>
 </Project>
