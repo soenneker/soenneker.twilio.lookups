@@ -26,7 +26,7 @@ public sealed class TwilioLookupsUtilTests : HostedUnitTest
     }
 
     [LocalOnly]
-    public async Task GetPhoneNumber_should_return_lookup_data()
+    public async ValueTask GetPhoneNumber_should_return_lookup_data()
     {
         var result = await _util.GetPhoneNumber(_phoneNumber, addOns: [_nomoroboSpamScore], cancellationToken: System.Threading.CancellationToken.None);
 
